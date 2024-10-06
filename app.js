@@ -1,12 +1,12 @@
 const maxImg = document.querySelector('.right-panel img');
 const select = document.querySelector('select');
-const allLang = ['en', 'ru', 'ua'];
+const allLang = ['en', 'uk'];
 
 document.querySelectorAll('.left-panel img').forEach(item => item.onmouseenter = (event) => maxImg.src = event.target.src);
 
 select.addEventListener('change', changeURLLanguage);
 
-// перенаправить на url с указанием языка
+
 function changeURLLanguage() {
     let lang = select.value;
     location.href = window.location.pathname + '#' + lang;
@@ -18,7 +18,7 @@ function changeLanguage() {
     hash = hash.substr(1);
     console.log(hash);
     if (!allLang.includes(hash)) {
-        location.href = window.location.pathname + '#en';
+        location.href = window.location.pathname + '#uk';
         location.reload();
     }
     select.value = hash;
